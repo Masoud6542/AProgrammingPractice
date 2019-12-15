@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks":[
+        {
+            "label": "C Compile & Run",
+            "type": "shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && gcc -Wall -g -o ${fileBasenameNoExtension} ${fileBasename} && ./${fileBasenameNoExtension}",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Java compile & Run",
+            "type": "shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && javac ${fileBasename} && java ${fileBasenameNoExtension}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Cpp Compile & Run",
+            "type": "shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && g++ -Wall -g -o ${fileBasenameNoExtension} ${fileBasename} && ./${fileBasenameNoExtension}",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Assembly",
+            "type": "shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && nasm -f elf -o ${fileBasenameNoExtension}.o ${fileBasename} && ld -m elf_i386 -s -o ${fileBasenameNoExtension}.out ${fileBasenameNoExtension}.o && ./${fileBasenameNoExtension}.out"
+        },
+        {
+            "label": "Html",
+            "type": "shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && chromium ${fileBasename}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Python",
+            "type":"shell",
+            "group": "build",
+            "command": "cd ${fileDirname} && python ${fileBasename}",
+        },
+    ]
+}
